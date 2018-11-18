@@ -4,10 +4,13 @@ const openProtectedLink = (html) => {
     const protectedLinkAnchor = html.querySelector('#content > :not(#nav) a'); // FRAGILE! The protected link node has no real identifier.
     if (protectedLinkAnchor) {
         window.location.replace(protectedLinkAnchor.href);
+        return true;
     }
+    return false;
 }
 
 const $passwordForm = document.querySelector('#content form');
+const $inputNode = $passwordForm.querySelector('[type="password"]');
 
 // open link (if no password form), else try guessing the passwords
 if (!$passwordForm) {
@@ -22,7 +25,13 @@ if (!$passwordForm) {
         .then((response) => response.text())
         .then((textHtml) => {
             const html = domParser.parseFromString(textHtml, 'text/html');
-            openProtectedLink(html);
+            const success = openProtectedLink(html);
+            if (success) {
+                $inputNode.classList.add('input-success')
+            } else {
+                $inputNode.classList.add('input-error')
+                $passwordForm.reset();
+            }
         });
     };
 
@@ -34,10 +43,8 @@ if (!$passwordForm) {
     // overwrite password form to use AJAX
     $passwordForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        const passwordVal = formData.get('Pass1')
+        const passwordVal = $inputNode.value;
 
         submitPassword(passwordVal);
-        e.target.reset();
     });
 }
