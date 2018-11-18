@@ -1,0 +1,19 @@
+{
+  "name": "Snahp.it Enhancement Suite",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "description": "Simplify opening forum.snahp.it links.",
+  "author": "Sam Kauffman (SamVK)",
+  "icons": {
+      "16": "img/icon/icon-16.png",
+      "48": "img/icon/icon-48.png"
+  },
+  "content_scripts": [{
+        "matches": [ "https://forum.snahp.it/viewtopic.php*" ],
+        "js": [ "forum/index.js" ],
+        "css": [ "forum/style.css" ]
+    }, {
+        "matches": [ "*://links.snahp.it/*" ],
+        "js": [ "links.js" ]
+    }]
+}

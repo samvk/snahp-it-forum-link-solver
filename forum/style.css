@@ -1,0 +1,11 @@
+.links-alert {
+    font-size: 1rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+
+    background-color: #282828;
+    border-radius: 0.5em;
+    border: 0.125em solid #DE7300;
+    padding: 0.5em;
+}
