@@ -3,9 +3,15 @@
     position: fixed;
     bottom: 2rem;
     right: 2rem;
+    display: flex;
+    flex-direction: column;
 
-    background-color: #282828;
-    border-radius: 0.5em;
-    border: 0.125em solid #DE7300;
+    background-color: #1D1D1D;
+    border: 0.1em solid #DE7300;
     padding: 0.5em;
+    box-shadow: 0 0 4px #000;
+}
+
+.links-alert a:not(:last-child) {
+    margin-bottom: 0.25em;
 }
