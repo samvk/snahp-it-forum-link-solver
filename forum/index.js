@@ -2,6 +2,11 @@
 const arrayify = (value) => Array.isArray(value) ? value : [value];
 
 // forum.snahp.it
+const hiddenContent = document.querySelector('.hidebox.hi');
+if (hiddenContent) {
+    document.querySelector('[id^="lnk_thanks_"]').click(); // will trigger refresh
+}
+
 const pageText = document.querySelector('.postbody .content').innerHTML;
 
 const snahpitLinkPattern = /https?:\/\/links.snahp.it\/[a-z\d]{35}/gi;
