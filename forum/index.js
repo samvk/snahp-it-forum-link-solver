@@ -32,7 +32,7 @@ const params = {
 }
 
 // build link
-const links = [...snahpitLinks, ...megaLinks, ...decodedMegaLinks]
+const links = [...snahpitLinks, ...megaLinks, ...decodedMegaLinks, ...zippyshareLinks, ...nofileIoLinks]
     .map((link) => `${link}?${Object.entries(params).map(([key, values]) => arrayify(values).map((value) => `${key}=${value}`))}`)
 
 // popup with links
