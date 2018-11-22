@@ -25,15 +25,15 @@ const links = new Map([
     [
         'Snahp.it Link Protector',
         [
-            ...(pageText.match(snahpitLinkPattern) || []).map((result) => `${result}?p=${username}`),
-            ...(pageText.match(snahpitLinkBase64Pattern) || []).map((result, i) => `${atob(result)}?p=${username}`),
+            ...(pageText.match(snahpitLinkPattern) || []).map((link) => `${link}?p=${username}`),
+            ...(pageText.match(snahpitLinkBase64Pattern) || []).map((link) => `${atob(link)}?p=${username}`),
         ],
     ],
     [
         'Mega',
         [
-            ...(pageText.match(megaHashPattern) || []).map((result, i) => `https://mega.nz/${result}${(megaLinkPasswords[i] || '')}`),
-            ...(pageText.match(megaLinkBase64Pattern) || []).map((result, i) => `${atob(result)}${(megaLinkPasswords[i] || '')}`),
+            ...(pageText.match(megaHashPattern) || []).map((link, i) => `https://mega.nz/${link}${(megaLinkPasswords[i] || '')}`),
+            ...(pageText.match(megaLinkBase64Pattern) || []).map((link, i) => `${atob(link)}${(megaLinkPasswords[i] || '')}`),
         ],
     ],
     [
