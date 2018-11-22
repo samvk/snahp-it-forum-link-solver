@@ -10,7 +10,7 @@ const openProtectedLink = (html) => {
 }
 
 const $passwordForm = document.querySelector('#content form');
-const $inputNode = $passwordForm.querySelector('[type="password"]');
+const $inputNode = document.querySelector('[type="password"]');
 
 // open link (if no password form), else try guessing the passwords
 if (!$passwordForm) {
