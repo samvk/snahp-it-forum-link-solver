@@ -31,7 +31,7 @@ const links = [...snahpitLinks, ...megaLinks, ...decodedMegaLinks]
 
 // popup with links
 const $popupNode = `<div class="links-alert">
-    ${links.map((link) => `<a class="postlink" href=${link} alt="">${link}</a>`).join('')}
+    ${links.map((link) => `<a class="postlink" href=${link} alt="">${link.split('?').shift()}</a>`).join('')}
 </div>`;
 
 document.body.insertAdjacentHTML('beforeend', $popupNode);
