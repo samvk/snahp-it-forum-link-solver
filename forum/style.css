@@ -12,7 +12,7 @@
     box-shadow: 0 0 4px #000000;
 }
 
-.links-alert a:not(:last-child) {
+.links-alert a {
     margin-bottom: 0.25em;
 }
 
@@ -20,8 +20,19 @@
     width: 90%;
     font-size: 0.83em;
     text-transform: uppercase;
+    margin-top: 0;
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #CCCCCC;
+}
+
+.links-site-section:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.links-site-header {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    font-size: 0.75em;
 }
 
 .icon.icon-md.links-alert-header-icon {

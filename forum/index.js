@@ -16,26 +16,44 @@ const megaLinkPasswordPattern = /![a-z\d-_]{20,}/gi;
 const zippyshareLinkPattern  = /https?:\/\/www(113)?.zippyshare.com\/v\/[a-z\d-_]+\/file.html/gi;
 const nofileIoLinkPattern  = /https?:\/\/(www.)?nofile.io\/f\/[a-z\d-_]+/gi;
 
-// get addition info that might he helpful for the link
+// addition info that might he helpful for the link
 const username = document.querySelector('.postprofile .username-coloured').textContent;
 const megaLinkPasswords = (pageText.match(megaLinkPasswordPattern) || []);
 
-// get all links
-const snahpitLinks = (pageText.match(snahpitLinkPattern) || []).map((result) => `${result}?p=${username}`);
-const megaLinks = (pageText.match(megaHashPattern) || []).map((result, i) => `https://mega.nz/${result}${(megaLinkPasswords[i] || '')}`);
-const decodedMegaLinks = (pageText.match(megaLinkBase64Pattern) || []).map((result) => atob(result));
-const zippyshareLinks = (pageText.match(zippyshareLinkPattern) || []);
-const nofileIoLinks = (pageText.match(nofileIoLinkPattern) || []);
-
-const links = [...snahpitLinks, ...megaLinks, ...decodedMegaLinks, ...zippyshareLinks, ...nofileIoLinks]
+const links = new Map([
+    [
+        'Snahp.it Link Protector',
+        (pageText.match(snahpitLinkPattern) || []).map((result) => `${result}?p=${username}`)
+    ],
+    [
+        'Mega',
+        [
+            ...(pageText.match(megaHashPattern) || []).map((result, i) => `https://mega.nz/${result}${(megaLinkPasswords[i] || '')}`),
+            ...(pageText.match(megaLinkBase64Pattern) || []).map((result, i) => `${atob(result)}${(megaLinkPasswords[i] || '')}`),
+        ],
+    ],
+    [
+        'Zippyshare',
+        (pageText.match(zippyshareLinkPattern) || [])
+    ],
+    [
+        'NoFile.io',
+        (pageText.match(nofileIoLinkPattern) || [])
+    ],
+]);
 
 // popup with links
 const $popupNode = `<div class="links-alert">
-    <p class='links-alert-header'>
+    <h1 class="links-alert-header">
         Links
         <i class="icon fa-external-link-square fa-fw icon-lightgray icon-md links-alert-header-icon"></i>
-    </p>
-    ${links.map((link) => `<a class="postlink" href=${link} alt="">${link.split('?').shift()}</a>`).join('')}
+    </h1>
+    ${[...links.entries()].filter(([_, siteLinks]) => siteLinks.length).map(([site, siteLinks]) => (
+        `<div class='links-site-section'>
+            <h2 class="links-site-header">${site}</h2>
+            ${siteLinks.map((link) => `<a class="postlink" href=${link} alt="">${link.split('?').shift()}</a>`).join('')}
+        </div>`
+    )).join('')}
 </div>`;
 
 document.body.insertAdjacentHTML('beforeend', $popupNode);
