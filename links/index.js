@@ -36,7 +36,7 @@ if (!$passwordForm) {
     };
 
     let passwordGuesses = new URLSearchParams(window.location.search).getAll('p');
-    passwordGuesses = [...passwordGuesses, 'snahp.it'];
+    passwordGuesses = [...passwordGuesses, 'snahp.it', 'megalinks'];
 
     passwordGuesses.forEach(submitPassword);
 
