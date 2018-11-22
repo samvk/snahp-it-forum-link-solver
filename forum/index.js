@@ -31,6 +31,10 @@ const links = [...snahpitLinks, ...megaLinks, ...decodedMegaLinks]
 
 // popup with links
 const $popupNode = `<div class="links-alert">
+    <p class='links-alert-header'>
+        Links
+        <i class="icon fa-external-link-square fa-fw icon-lightgray icon-md links-alert-header-icon"></i>
+    </p>
     ${links.map((link) => `<a class="postlink" href=${link} alt="">${link.split('?').shift()}</a>`).join('')}
 </div>`;
 

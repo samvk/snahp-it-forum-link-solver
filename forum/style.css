@@ -9,9 +9,21 @@
     background-color: #1D1D1D;
     border: 0.1em solid #DE7300;
     padding: 0.5em;
-    box-shadow: 0 0 4px #000;
+    box-shadow: 0 0 4px #000000;
 }
 
 .links-alert a:not(:last-child) {
     margin-bottom: 0.25em;
+}
+
+.links-alert-header {
+    width: 90%;
+    font-size: 0.83em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.icon.icon-md.links-alert-header-icon {
+    font-size: inherit;
 }
