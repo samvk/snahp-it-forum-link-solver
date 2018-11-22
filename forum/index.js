@@ -10,8 +10,9 @@ if (hiddenContent) {
 const pageText = document.querySelector('.postbody .content').innerHTML;
 
 const snahpitLinkPattern = /https?:\/\/links.snahp.it\/[a-z\d]{35}/gi;
+const snahpitLinkBase64Pattern = /aHR0c(DovL2xpbmtzLnNuYWhwLml0L|HM6Ly9saW5rcy5zbmFocC5pd)[a-z\d]+\={0,2}/gi;
 const megaHashPattern = /#F?![a-z\d]{8}(![a-z\d!-_]+)?/gi; // just look for the hash since sometimes that's all that's posted
-const megaLinkBase64Pattern = /aHR0cHM6Ly9[a-z\d]+\={1,2}/gi;
+const megaLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56Ly[a-z\d]+\={0,2}/gi;
 const megaLinkPasswordPattern = /![a-z\d-_]{20,}/gi;
 const zippyshareLinkPattern  = /https?:\/\/www(113)?.zippyshare.com\/v\/[a-z\d-_]+\/file.html/gi;
 const nofileIoLinkPattern  = /https?:\/\/(www.)?nofile.io\/f\/[a-z\d-_]+/gi;
@@ -23,7 +24,10 @@ const megaLinkPasswords = (pageText.match(megaLinkPasswordPattern) || []);
 const links = new Map([
     [
         'Snahp.it Link Protector',
-        (pageText.match(snahpitLinkPattern) || []).map((result) => `${result}?p=${username}`)
+        [
+            ...(pageText.match(snahpitLinkPattern) || []).map((result) => `${result}?p=${username}`),
+            ...(pageText.match(snahpitLinkBase64Pattern) || []).map((result, i) => `${atob(result)}?p=${username}`),
+        ],
     ],
     [
         'Mega',
