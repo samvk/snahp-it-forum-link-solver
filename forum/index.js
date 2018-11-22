@@ -16,24 +16,18 @@ const megaLinkPasswordPattern = /![a-z\d-_]{20,}/gi;
 const zippyshareLinkPattern  = /https?:\/\/www(113)?.zippyshare.com\/v\/[a-z\d-_]+\/file.html/gi;
 const nofileIoLinkPattern  = /https?:\/\/(www.)?nofile.io\/f\/[a-z\d-_]+/gi;
 
-const snahpitLinks = (pageText.match(snahpitLinkPattern) || []);
+// get addition info that might he helpful for the link
+const username = document.querySelector('.postprofile .username-coloured').textContent;
 const megaLinkPasswords = (pageText.match(megaLinkPasswordPattern) || []);
+
+// get all links
+const snahpitLinks = (pageText.match(snahpitLinkPattern) || []).map((result) => `${result}?p=${username}`);
 const megaLinks = (pageText.match(megaHashPattern) || []).map((result, i) => `https://mega.nz/${result}${(megaLinkPasswords[i] || '')}`);
 const decodedMegaLinks = (pageText.match(megaLinkBase64Pattern) || []).map((result) => atob(result));
 const zippyshareLinks = (pageText.match(zippyshareLinkPattern) || []);
 const nofileIoLinks = (pageText.match(nofileIoLinkPattern) || []);
 
-// get addition info that might he helpful for the link
-const username = document.querySelector('.postprofile .username-coloured').textContent;
-
-// put them into params
-const params = {
-    p: username,
-}
-
-// build link
 const links = [...snahpitLinks, ...megaLinks, ...decodedMegaLinks, ...zippyshareLinks, ...nofileIoLinks]
-    .map((link) => `${link}?${Object.entries(params).map(([key, values]) => arrayify(values).map((value) => `${key}=${value}`))}`)
 
 // popup with links
 const $popupNode = `<div class="links-alert">
