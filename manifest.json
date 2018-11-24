@@ -9,7 +9,10 @@
       "48": "img/icon/icon-48.png"
   },
   "content_scripts": [{
-        "matches": [ "https://forum.snahp.it/viewtopic.php*" ],
+        "matches": [
+            "https://forum.snahp.it/viewtopic.php*",
+            "https://*.reddit.com/r/megalinks/comments/*"
+        ],
         "js": [ "forum/index.js" ],
         "css": [ "forum/style.css" ]
     }, {

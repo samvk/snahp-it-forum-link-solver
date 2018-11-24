@@ -1,13 +1,29 @@
 // utils
 const arrayify = (value) => Array.isArray(value) ? value : [value];
 
+// site-specific variables
+let pageText = '';
+let userName = '';
+
+switch (window.location.hostname) {
+    case 'forum.snahp.it':
+        pageText = document.querySelector('.postbody .content').innerHTML;
+        username = document.querySelector('.postprofile .username-coloured').textContent;
+        break;
+    case 'www.reddit.com':
+        pageText = document.querySelector('.gGDEPn').innerHTML;
+        username = document.querySelector('.gWXVVu').textContent.split('/').pop();
+        break;
+    case 'old.reddit.com':
+        pageText = document.querySelector('.entry .usertext-body').innerHTML;
+        username = document.querySelector('.author').textContent;
+}
+
 // forum.snahp.it
 const hiddenContent = document.querySelector('.hidebox.hi');
 if (hiddenContent) {
     document.querySelector('[id^="lnk_thanks_"]').click(); // will trigger refresh
 }
-
-const pageText = document.querySelector('.postbody .content').innerHTML;
 
 const snahpitLinkPattern = /https?:\/\/links.snahp.it\/[a-z\d]{35}/gi;
 const snahpitLinkBase64Pattern = /aHR0c(DovL2xpbmtzLnNuYWhwLml0L|HM6Ly9saW5rcy5zbmFocC5pd)[a-z\d]+\={0,2}/gi;
@@ -18,7 +34,6 @@ const zippyshareLinkPattern  = /https?:\/\/www(113)?.zippyshare.com\/v\/[a-z\d-_
 const nofileIoLinkPattern  = /https?:\/\/(www.)?nofile.io\/f\/[a-z\d-_]+/gi;
 
 // addition info that might he helpful for the link
-const username = document.querySelector('.postprofile .username-coloured').textContent;
 const megaLinkPasswords = (pageText.match(megaLinkPasswordPattern) || []);
 
 const links = new Map([

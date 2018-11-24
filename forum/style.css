@@ -8,6 +8,8 @@
     border: 0.1em solid #DE7300;
     padding: 0.5em;
     box-shadow: 0 0 4px #000000;
+
+    z-index: 9999;
 }
 
 .links-alert a {
