@@ -16,7 +16,7 @@ switch (window.location.hostname) {
         break;
     case 'old.reddit.com':
         pageText = document.querySelector('.entry .usertext-body').innerHTML;
-        username = document.querySelector('.author').textContent;
+        username = document.querySelector('.entry .author').textContent;
 }
 
 // forum.snahp.it
