@@ -12,8 +12,13 @@
     z-index: 9999;
 }
 
-.links-alert a {
+.links-alert .links-site-link {
+    font-size: 1em;
     margin-bottom: 0.25em;
+}
+
+.links-site-section:not(:last-child) {
+    margin-bottom: 0.5rem;
 }
 
 .links-alert-header {
@@ -25,14 +30,17 @@
     border-bottom: 1px solid #CCCCCC;
 }
 
-.links-site-section:not(:last-child) {
-    margin-bottom: 0.5rem;
-}
 
 .links-site-header {
     margin-top: 0;
     margin-bottom: 0.25rem;
     font-size: 0.75em;
+}
+
+.links-alert-header,
+.links-site-header {
+    color: #E9EBEE;
+    font-weight: 700;
 }
 
 .icon.icon-md.links-alert-header-icon {
