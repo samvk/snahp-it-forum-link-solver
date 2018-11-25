@@ -15,6 +15,20 @@
 .links-alert .links-site-link {
     font-size: 1em;
     margin-bottom: 0.25em;
+    color: #DE7300;
+    border-bottom: 1px solid #DE7300;
+    font-weight: 500;
+
+    text-decoration: none !important;
+    padding-bottom: 0;
+}
+
+.links-alert .links-site-link:hover {
+    color: #E9EBEE;
+}
+
+.links-alert .links-site-link:visited {
+    color: #d49451;
 }
 
 .links-site-section:not(:last-child) {
