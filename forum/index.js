@@ -32,6 +32,7 @@ const megaLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56Ly[a-z\d]+\={0,2}/gi;
 const megaLinkPasswordPattern = /![a-z\d-_]{20,}/gi;
 const zippyshareLinkPattern  = /https?:\/\/www(113)?.zippyshare.com\/v\/[a-z\d-_]+\/file.html/gi;
 const nofileIoLinkPattern  = /https?:\/\/(www.)?nofile.io\/f\/[a-z\d-_]+/gi;
+const snahpItLinkPattern  = /https?:\/\/(www.)?snahp.it\/?\?p\=\d{2,6}/gi;
 
 // addition info that might he helpful for the link
 const megaLinkPasswords = (pageText.match(megaLinkPasswordPattern) || []);
@@ -59,6 +60,10 @@ const links = new Map([
         'NoFile.io',
         (pageText.match(nofileIoLinkPattern) || [])
     ],
+    [
+        'Snahp.it',
+        (pageText.match(snahpItLinkPattern) || [])
+    ],
 ]);
 
 // popup with links
@@ -70,7 +75,7 @@ const $popupNode = `<div class="links-alert">
     ${[...links.entries()].filter(([_, siteLinks]) => siteLinks.length).map(([site, siteLinks]) => (
         `<div class='links-site-section'>
             <h2 class="links-site-header">${site}</h2>
-            ${siteLinks.map((link) => `<div><a class="postlink" href=${link} alt="">${link.split('?').shift()}</a></div>`).join('')}
+            ${siteLinks.map((link) => `<div><a class="postlink fQWLfM" href=${link} alt="">${link.split('?').shift()}</a></div>`).join('')}
         </div>`
     )).join('')}
 </div>`;
