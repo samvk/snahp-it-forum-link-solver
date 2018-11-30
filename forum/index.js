@@ -41,8 +41,8 @@ const links = new Map([
     [
         'Snahp.it Link Protector',
         [
-            ...(pageText.match(snahpitLinkPattern) || []).map((link) => `${link}?p=${username}`),
-            ...(pageText.match(snahpitLinkBase64Pattern) || []).map((link) => `${atob(link)}?p=${username}`),
+            ...(pageText.match(snahpitLinkPattern) || []).map((link) => `${link}?p=${username}&p=${username.toLowerCase()}`),
+            ...(pageText.match(snahpitLinkBase64Pattern) || []).map((link) => `${atob(link)}?p=${username}&p=${username.toLowerCase()}`),
         ],
     ],
     [
