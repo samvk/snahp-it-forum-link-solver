@@ -1,9 +1,9 @@
 const domParser = new DOMParser();
 
 const openProtectedLink = (html) => {
-    const protectedLinkAnchor = html.querySelector('#content > :not(#nav) a'); // FRAGILE! The protected link node has no real identifier.
-    if (protectedLinkAnchor) {
-        window.location.replace(protectedLinkAnchor.href);
+    const protectedLinkAnchors = html.querySelectorAll('#content > :not(#nav) a'); // FRAGILE! The protected link node has no real identifier.
+    if (protectedLinkAnchors.length === 1) {
+        window.location.replace(protectedLinkAnchors[0].href);
         return true;
     }
     return false;
