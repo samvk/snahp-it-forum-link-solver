@@ -11,7 +11,7 @@ switch (window.location.hostname) {
         username = document.querySelector('.postprofile .username-coloured').textContent;
         break;
     case 'www.reddit.com':
-        pageText = document.querySelector('.gGDEPn').innerHTML;
+        pageText = document.querySelector('.ckueCN').innerHTML;
         username = document.querySelector('.gWXVVu').textContent.split('/').pop();
         break;
     case 'old.reddit.com':
