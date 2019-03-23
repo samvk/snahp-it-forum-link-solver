@@ -30,7 +30,7 @@ const snahpitLinkBase64Pattern = /aHR0c(DovL2xpbmtzLnNuYWhwLml0L|HM6Ly9saW5rcy5z
 const megaHashPattern = /#F?![a-z\d]{8}(![a-z\d!-_]+)?/gi; // just look for the hash since sometimes that's all that's posted
 const megaLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56Ly[a-z\d]+\={0,2}/gi;
 const megaLinkPasswordPattern = /![a-z\d-_]{20,}/gi;
-const zippyshareLinkPattern  = /https?:\/\/www(113)?.zippyshare.com\/v\/[a-z\d-_]+\/file.html/gi;
+const zippyshareLinkPattern  = /https?:\/\/www\d*.zippyshare.com\/v\/[a-z\d-_]+\/file.html/gi;
 const nofileIoLinkPattern  = /https?:\/\/(www.)?nofile.io\/f\/[a-z\d-_]+/gi;
 const snahpItLinkPattern  = /https?:\/\/(www.)?snahp.it\/?\?p\=\d{2,6}/gi;
 
