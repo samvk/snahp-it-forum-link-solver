@@ -1,8 +1,8 @@
-# Chrome Extension | Snahp.it Enhancement Suite
+# Chrome Extension | MegaLinks & Snahp.it Forum Link Solver
 
 Simplify opening forum.snahp.it links.
 
-_Snahp.it Enhancement Suite_ automatically find all forum.snahp.it post links including:
+_Snahp.it Enhancement Suite_ automatically finds all forum.snahp.it post links including:
 
 * Mega.nz
 * Snahp.it Link Protector
