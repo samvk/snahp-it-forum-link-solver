@@ -1,8 +1,8 @@
 {
-  "name": "MegaLinks & Snahp.it Forum Link Solver",
+  "name": "Snahp.it Forum Link Solver",
   "manifest_version": 2,
-  "version": "1.0.0",
   "description": "Automatically find and decode all /r/megalinks and forum.snahp.it post links.",
+  "version": "1.1.3",
   "author": "Sam Kauffman (SamVK)",
   "icons": {
       "16": "img/icon/icon-16.png",
