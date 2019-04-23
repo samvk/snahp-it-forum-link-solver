@@ -9,13 +9,7 @@ const openProtectedLink = (html) => {
     return false;
 }
 
-const $passwordForm = document.querySelector('#content form');
-const $inputNode = document.querySelector('[type="password"]');
-
-// open link (if no password form), else try guessing the passwords
-if (!$passwordForm) {
-    openProtectedLink(document);
-} else {
+const handleSubmitPasswordForm = () => {
     const submitPassword = (password) => {
         fetch(window.location.href, {
             method: 'post',
@@ -47,4 +41,14 @@ if (!$passwordForm) {
 
         submitPassword(passwordVal);
     });
+}
+
+const $passwordForm = document.querySelector('#content form');
+const $inputNode = document.querySelector('[type="password"]');
+
+// open link (if no password form), else try guessing the passwords
+if ($passwordForm && $inputNode) {
+    handleSubmitPasswordForm();
+} else {
+    openProtectedLink(document);
 }
