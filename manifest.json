@@ -11,7 +11,7 @@
   "content_scripts": [{
         "matches": [
             "https://forum.snahp.it/viewtopic.php*",
-            "https://*.reddit.com/r/megalinks/comments/*"
+            "https://*.reddit.com/r/megalinks2/comments/*"
         ],
         "js": [ "forum/index.js" ],
         "css": [ "forum/style.css" ]
