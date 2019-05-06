@@ -10,8 +10,7 @@
   },
   "content_scripts": [{
         "matches": [
-            "https://forum.snahp.it/viewtopic.php*",
-            "https://*.reddit.com/r/megalinks/comments/*"
+            "https://forum.snahp.it/viewtopic.php*"
         ],
         "js": [ "forum/index.js" ],
         "css": [ "forum/style.css" ]
