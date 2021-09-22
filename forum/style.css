@@ -9,6 +9,9 @@
     padding: 0.5em;
     box-shadow: 0 0 4px #000000;
 
+    max-height: calc(100% - 6rem);
+    overflow-y: auto;
+
     z-index: 9999;
 }
 
