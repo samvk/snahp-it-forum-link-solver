@@ -42,9 +42,9 @@ const megaFileLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56L2ZpbGUv[a-z\d]+\={0,2}/g
 const megaFileLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMMlpwYkdVd[a-z\d]+\={0,2}/gi;
 const megaFolderLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56L2ZvbGRlci9[a-z\d]+\={0,2}/gi;
 const megaFolderLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMMlp2YkdSbGNpO[a-z\d]+\={0,2}/gi;
-const zippyshareLinkPattern  = /https?:\/\/www\d*\.zippyshare\.com\/v\/[a-z\d\-_]+\/file.html/gi;
-const nofileIoLinkPattern  = /https?:\/\/(www\.)?nofile\.io\/f\/[a-z\d\-_]+/gi;
-const snahpItLinkPattern  = /https?:\/\/(www\.)?snahp\.(it|eu)\/?\?p\=\d{2,6}/gi;
+const zippyshareLinkPattern = /https?:\/\/www\d*\.zippyshare\.com\/v\/[a-z\d\-_]+\/file.html/gi;
+const nofileIoLinkPattern = /https?:\/\/(www\.)?nofile\.io\/f\/[a-z\d\-_]+/gi;
+const snahpItLinkPattern = /https?:\/\/(www\.)?snahp\.(it|eu)\/?\?p\=\d{2,6}/gi;
 
 // addition info that might he helpful for the link
 const megaLinkPasswords = (pageText.match(megaLinkPasswordPattern) || []);
