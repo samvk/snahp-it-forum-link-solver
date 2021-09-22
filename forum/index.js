@@ -31,20 +31,20 @@ if (hiddenContent) {
     document.querySelector('[id^="lnk_thanks_"]').click(); // will trigger refresh
 }
 
-const snahpitLinkPattern = /https?:\/\/links.snahp.(it|eu)\/[a-z\d]{35}/gi;
-const snahpitLinkBase64Pattern = /aHR0c(DovL2xpbmtzLnNuYWhwLml0L|HM6Ly9saW5rcy5zbmFocC5pd)[a-z\d]+\={0,2}/gi;
-const megaHashPattern = /#F?![a-z\d]{8}(![a-z\d!\-_]+)?/gi; // just look for the hash since sometimes that's all that's posted
-const megaLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56Ly[a-z\d]+\={0,2}/gi;
-const megaLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMe[a-z\d]+\={0,2}/gi;
-const megaLinkPasswordPattern = /![a-z\d\-_]{20,}/gi;
-const megaFileOrFolderPattern = /https?:\/\/(www\.)?mega\.(co\.)?nz\/[a-z]+\/([a-z\d\-_]+)?#([a-z\d\-_]+)(![a-z\d\-_]+)?/gi;
-const megaFileLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56L2ZpbGUv[a-z\d]+\={0,2}/gi;
-const megaFileLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMMlpwYkdVd[a-z\d]+\={0,2}/gi;
-const megaFolderLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56L2ZvbGRlci9[a-z\d]+\={0,2}/gi;
-const megaFolderLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMMlp2YkdSbGNpO[a-z\d]+\={0,2}/gi;
-const zippyshareLinkPattern = /https?:\/\/www\d*\.zippyshare\.com\/v\/[a-z\d\-_]+\/file.html/gi;
-const nofileIoLinkPattern = /https?:\/\/(www\.)?nofile\.io\/f\/[a-z\d\-_]+/gi;
-const snahpItLinkPattern = /https?:\/\/(www\.)?snahp\.(it|eu)\/?\?p\=\d{2,6}/gi;
+const snahpitLinkPattern = /https?:\/\/links.snahp.(it|eu)\/[a-z\d]{35}\b(?! \.\.\. )/gi;
+const snahpitLinkBase64Pattern = /aHR0c(DovL2xpbmtzLnNuYWhwLml0L|HM6Ly9saW5rcy5zbmFocC5pd)[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const megaHashPattern = /#F?![a-z\d]{8}(![a-z\d!\-_]+)?\b(?! \.\.\. )/gi; // just look for the hash since sometimes that's all that's posted
+const megaLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56Ly[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const megaLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMe[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const megaLinkPasswordPattern = /![a-z\d\-_]{20,}\b(?! \.\.\. )/gi;
+const megaFileOrFolderPattern = /https?:\/\/(www\.)?mega\.(co\.)?nz\/[a-z]+\/([a-z\d\-_]+)?#([a-z\d\-_]+)(![a-z\d\-_]+)?\b(?! \.\.\. )/gi;
+const megaFileLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56L2ZpbGUv[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const megaFileLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMMlpwYkdVd[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const megaFolderLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56L2ZvbGRlci9[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const megaFolderLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMMlp2YkdSbGNpO[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const zippyshareLinkPattern = /https?:\/\/www\d*\.zippyshare\.com\/v\/[a-z\d\-_]+\/file.html\b(?! \.\.\. )/gi;
+const nofileIoLinkPattern = /https?:\/\/(www\.)?nofile\.io\/f\/[a-z\d\-_]+\b(?! \.\.\. )/gi;
+const snahpItLinkPattern = /https?:\/\/(www\.)?snahp\.(it|eu)\/?\?p\=\d{2,6}\b(?! \.\.\. )/gi;
 
 // addition info that might he helpful for the link
 const megaLinkPasswords = (pageText.match(megaLinkPasswordPattern) || []);
