@@ -93,7 +93,7 @@ const $popupNode = `<div class="links-alert">
     ${[...links.entries()].filter(([_, siteLinks]) => siteLinks.length).map(([site, siteLinks]) => (
         `<div class='links-site-section'>
             <h2 class="links-site-header">${site}</h2>
-            ${siteLinks.map((link) => `<div><a class="postlink iJWksO links-site-link" href=${link} alt="">${link.split('?').shift()}</a></div>`).join('')}
+            ${[...new Set(siteLinks)].map((link) => `<div><a class="postlink iJWksO links-site-link" href=${link} alt="">${link.split('?').shift()}</a></div>`).join('')}
         </div>`
     )).join('')}
 </div>`;
