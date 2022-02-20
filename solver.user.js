@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name          Snahp Forum Link Solver
 // @namespace     https://github.com/samvk/
-// @version       1.0.1
-// @author        samvk
-// @author        andrewjmetzger
+// @version       1.0.2
+// @author        samvk, andrewjmetzger
 // @description   Automatically find and decode Snahp forum post links.
 //
+// @homepageURL https://github.com/samvk/snahp-it-forum-link-solver
 // @downloadURL https://github.com/andrewjmetzger/snahp-it-forum-link-solver/raw/userscript/solver.user.js
 // @updateURL   https://github.com/andrewjmetzger/snahp-it-forum-link-solver/raw/userscript/solver.user.js
 // @supportURL  https://github.com/andrewjmetzger/snahp-it-forum-link-solver/issues
