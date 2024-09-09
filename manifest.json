@@ -2,7 +2,7 @@
   "name": "Snahp Forum Link Solver",
   "manifest_version": 3,
   "description": "Automatically find and decode all /r/megalinks and Snahp forum post links.",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "author": "Sam Kauffman (SamVK)",
   "icons": {
       "16": "img/icon/icon-16.png",
@@ -10,14 +10,13 @@
   },
   "content_scripts": [{
         "matches": [
-            "https://forum.snahp.it/viewtopic.php*",
             "https://fora.snahp.eu/viewtopic.php*",
             "https://megadb.tweakly.net/thread/*"
         ],
         "js": [ "forum/index.js" ],
         "css": [ "forum/style.css" ]
     }, {
-        "matches": [ "*://links.snahp.it/*", "*://links.snahp.eu/*" ],
+        "matches": [ "*://lnk.snahp.eu/*" ],
         "js": [ "links/index.js" ],
         "css": [ "links/style.css" ]
     }]

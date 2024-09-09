@@ -31,8 +31,8 @@ if (hiddenContent) {
     document.querySelector('[id^="lnk_thanks_"]').click(); // will trigger refresh
 }
 
-const snahpitLinkPattern = /https?:\/\/links.snahp.(it|eu)\/[a-z\d]{35}\b(?! \.\.\. )/gi;
-const snahpitLinkBase64Pattern = /aHR0c(DovL2xpbmtzLnNuYWhwLml0L|HM6Ly9saW5rcy5zbmFocC5pd)[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
+const snahpitLinkPattern = /https?:\/\/(links|lnk).snahp.(it|eu)\/[a-z\d]{35}\b(?! \.\.\. )/gi;
+const snahpitLinkBase64Pattern = /aHR0cHM6Ly9sbmsuc25haHAuZXUvZ[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
 const megaHashPattern = /#F?![a-z\d]{8}(![a-z\d!\-_]+)?\b(?! \.\.\. )/gi; // just look for the hash since sometimes that's all that's posted
 const megaLinkBase64Pattern = /aHR0cHM6Ly9tZWdhLm56Ly[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
 const megaLinkBase64x2Pattern = /YUhSMGNITTZMeTl0WldkaExtNTZMe[a-z\d]+\={0,2}\b(?! \.\.\. )/gi;
