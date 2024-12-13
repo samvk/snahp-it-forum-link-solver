@@ -8,6 +8,11 @@
       "16": "img/icon/icon-16.png",
       "48": "img/icon/icon-48.png"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{86bdb411-d28b-4284-a009-49e822e8b496}"
+    }
+  },
   "content_scripts": [{
         "matches": [
             "https://fora.snahp.eu/viewtopic.php*",
